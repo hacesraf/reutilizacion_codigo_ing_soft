@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Componentes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <div id="login-container">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Entrar</button>
+        <p id="login-error"></p>
+    </div>
+
+    <!-- APP PRINCIPAL -->
+    <div id="app" class="hidden">
+
+        <!-- MENÚ -->
+        <nav>
+            <ul>
+                <li onclick="showSection('home')">Inicio</li>
+                <li onclick="showSection('contact')">Contacto</li>
+                <li onclick="logout()">Cerrar sesión</li>
+            </ul>
+        </nav>
+
+        <!-- CONTENIDO -->
+        <div id="content">
+            <section id="home">
+                <h1>Bienvenido</h1>
+                <p>Esta es una demo de componentes reutilizables.</p>
+            </section>
+
+            <section id="contact" class="hidden">
+                <h1>Contacto</h1>
+                <p><strong>Nombre:</strong> Ricardo</p>
+                <p><strong>Email:</strong> ejemplo@email.com</p>
+                <p><strong>Teléfono:</strong> 477-000-0000</p>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
