@@ -15,6 +15,12 @@ function login() {
     const password = document.getElementById("password").value;
     const error = document.getElementById("login-error");
 
+if (username === "" || password === "") {
+    error.textContent = "Todos los campos son obligatorios";
+    error.style.color = "orange";
+    return;
+}
+
     if (username === USER && password === PASS) {
     localStorage.setItem("logged", "true");
 
