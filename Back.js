@@ -1,3 +1,10 @@
+window.onload = function() {
+    if (localStorage.getItem("logged") === "true") {
+        document.getElementById("login-container").classList.add("hidden");
+        document.getElementById("app").classList.remove("hidden");
+    }
+}
+
 // Usuario de prueba
 const USER = "admin";
 const PASS = "1234";
@@ -9,8 +16,10 @@ function login() {
     const error = document.getElementById("login-error");
 
     if (username === USER && password === PASS) {
-        document.getElementById("login-container").classList.add("hidden");
-        document.getElementById("app").classList.remove("hidden");
+    localStorage.setItem("logged", "true");
+
+    document.getElementById("login-container").classList.add("hidden");
+    document.getElementById("app").classList.remove("hidden");
     } else {
         error.textContent = "Usuario o contraseña incorrectos";
         error.style.color = "red";
